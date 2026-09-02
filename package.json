@@ -1,9 +1,16 @@
-{
+{ 
   "name": "controle-armazem-2-1",
   "version": "2.1.0",
   "description": "Controle de contêineres - Armazém 2.1",
   "main": "server.js",
-  "scripts": { "start": "node server.js" },
-  "dependencies": { "express": "^4.21.2", "better-sqlite3": "11.7.0" },
-  "engines":  { "node": "20.15.1" } }
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "better-sqlite3": "11.7.0"
+  },
+  "engines": {
+    "node": "20.15.1"
+  }
 }
