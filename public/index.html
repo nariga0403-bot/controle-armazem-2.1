@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Controle de Contêineres — Armazém 2.1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>📦 Controle de Contêineres</h1>
+    <p>Armazém · versão 2.1</p>
+  </div>
+  <span id="connection" class="badge">Verificando...</span>
+</header>
+
+<main>
+  <section class="stats">
+    <div><b id="total">0</b><span>Total</span></div>
+    <div><b id="running">0</b><span>Em andamento</span></div>
+    <div><b id="finished">0</b><span>Finalizados</span></div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">
+      <h2>Novo contêiner</h2>
+      <button class="secondary" id="manageBtn">⚙ Responsáveis</button>
+    </div>
+    <form id="containerForm">
+      <input id="number" placeholder="Número do contêiner" required>
+      <input id="area" placeholder="Área" required>
+      <select id="responsible" required></select>
+      <button>➕ Cadastrar</button>
+    </form>
+    <div id="offlineNote" class="notice hidden">Sem internet. O cadastro ficará salvo neste aparelho e será sincronizado quando a conexão voltar.</div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">
+      <h2>Em andamento</h2>
+      <input id="search" placeholder="🔎 Pesquisar...">
+    </div>
+    <div id="runningList"></div>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><h2>Finalizados</h2></div>
+    <div id="finishedList"></div>
+  </section>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <div class="section-title"><h2>Responsáveis</h2><button class="icon" id="closeModal">✕</button></div>
+    <form id="respForm"><input id="respName" placeholder="Nome do responsável" required><button>Adicionar</button></form>
+    <div id="respList"></div>
+  </div>
+</div>
+
+<div id="editModal" class="modal hidden">
+  <div class="modal-box">
+    <div class="section-title"><h2>Editar finalização</h2><button class="icon" id="closeEdit">✕</button></div>
+    <form id="editForm">
+      <input type="hidden" id="editId">
+      <label>Responsável<select id="editResponsible" required></select></label>
+      <label>Data de finalização<input type="date" id="editDate" required></label>
+      <label>Horário de finalização<input type="time" id="editTime" required></label>
+      <button>Salvar alterações</button>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
